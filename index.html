@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lay Spreading</title>
+    <!-- Google Font Orbitron -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Orbitron", sans-serif;
+      }
+    </style>
+  </head>
+  <body
+    class="h-screen flex items-center justify-center overflow-hidden bg-[url('./assets/home.png')] bg-no-repeat bg-center bg-fixed bg-[length:100%]"
+  >
+    <!-- Date -->
+    <div
+      id="date"
+      class="absolute top-2 left-5 text-xs font-semibold text-gray-800"
+    ></div>
+
+    <!-- Content -->
+    <div class="text-center">
+      <h1 class="text-[52px] font-black tracking-wider text-black drop-shadow">
+        LAY SPREADING
+      </h1>
+      <a
+        href="table_allocate_1.html"
+        class="inline-block mt-5 px-8 py-3 bg-white rounded-lg font-bold text-base text-black shadow-md transition duration-300 hover:bg-black hover:text-white hover:scale-105"
+      >
+        GET STARTED &gt;
+      </a>
+    </div>
+
+    <script>
+      // Get current date
+      const today = new Date();
+      const day = String(today.getDate()).padStart(2, "0");
+      const month = String(today.getMonth() + 1).padStart(2, "0");
+      const year = today.getFullYear();
+
+      // Format DD/MM/YYYY
+      document.getElementById(
+        "date"
+      ).innerText = `DATE: ${day}/${month}/${year}`;
+    </script>
+  </body>
+</html>

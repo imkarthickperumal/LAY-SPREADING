@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lay Spreading</title>
+    <!-- Orbitron Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Orbitron", sans-serif;
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-screen bg-[url('./assets/home.png')] bg-no-repeat bg-center bg-fixed bg-[length:100%] text-black"
+  >
+    <!-- Header -->
+    <div
+      class="text-center text-2xl md:text-4xl font-extrabold tracking-widest border-b-2 border-black py-5"
+    >
+      LAY SPREADING
+    </div>
+
+    <!-- Top bar -->
+    <div
+      class="flex justify-between px-5 py-2 text-sm md:text-base font-semibold"
+    >
+      <div id="date"></div>
+      <div>TABLE ALLOCATE</div>
+    </div>
+
+    <!-- Tables Section -->
+    <div class="flex flex-wrap justify-center gap-10 mt-10">
+      <!-- Table 1 -->
+      <div class="flex flex-col items-center min-w-[320px] flex-1 max-w-xl">
+        <!-- Dropdown for Table 1 -->
+        <select
+          class="mb-4 w-4/5 border-2 border-black rounded-md px-3 py-2 text-sm font-semibold focus:border-[#9fb4bd] focus:ring-2 focus:ring-[#9fb4bd]/50 outline-none"
+        >
+          <option value="">-- Select Option for Table 1 --</option>
+          <option value="cutting">Cutting</option>
+          <option value="spreading">Spreading</option>
+          <option value="checking">Checking</option>
+        </select>
+        <h2 class="text-lg md:text-xl font-bold mb-4">TABLE 1</h2>
+        <div class="flex gap-4 w-4/5">
+          <!-- Table -->
+          <table
+            class="w-full max-w-md border border-black bg-white text-center"
+          >
+            <thead>
+              <tr class="bg-gray-100 font-bold">
+                <th class="border border-black p-3 text-sm">EMP NO</th>
+                <th class="border border-black p-3 text-sm">EMP NAME</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-black p-3">101</td>
+                <td class="border border-black p-3">Iron Man</td>
+              </tr>
+              <tr>
+                <td class="border border-black p-3">102</td>
+                <td class="border border-black p-3">Captain America</td>
+              </tr>
+              <tr>
+                <td class="border border-black p-3">103</td>
+                <td class="border border-black p-3">Thor</td>
+              </tr>
+              <tr>
+                <td class="border border-black p-3">104</td>
+                <td class="border border-black p-3">Hulk</td>
+              </tr>
+              <tr>
+                <td class="border border-black p-3">105</td>
+                <td class="border border-black p-3">Black Widow</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- QR Column -->
+          <div class="flex flex-col justify-around">
+            <br />
+            <br />
+            <img
+              src="./assets/qrcode.png"
+              class="w-9 h-9 mx-auto my-2 cursor-pointer transition-transform hover:scale-110"
+            />
+            <img
+              src="./assets/qrcode.png"
+              class="w-9 h-9 mx-auto my-2 cursor-pointer transition-transform hover:scale-110"
+            />
+            <img
+              src="./assets/qrcode.png"
+              class="w-9 h-9 mx-auto my-2 cursor-pointer transition-transform hover:scale-110"
+            />
+            <img
+              src="./assets/qrcode.png"
+              class="w-9 h-9 mx-auto my-2 cursor-pointer transition-transform hover:scale-110"
+            />
+            <img
+              src="./assets/qrcode.png"
+              class="w-9 h-9 mx-auto my-2 cursor-pointer transition-transform hover:scale-110"
+            />
+          </div>
+        </div>
+        <!-- <button 
+          class="mt-5 px-12 py-3 bg-[#9fb4bd] text-white text-lg font-bold rounded-md transition hover:bg-black hover:scale-105"
+        >
+          Next
+        </button> -->
+        <a
+          href="spreading_production_1.html"
+          class="mt-5 inline-block px-12 py-3 bg-[#9fb4bd] text-white text-lg font-bold rounded-md transition hover:bg-black hover:scale-105"
+        >
+          Next
+        </a>
+      </div>
+
+      <!-- Table 2 -->
+      <div class="flex flex-col items-center min-w-[320px] flex-1 max-w-xl">
+        <!-- Dropdown for Table 2 -->
+        <select
+          class="mb-4 w-4/5 border-2 border-black rounded-md px-3 py-2 text-sm font-semibold focus:border-[#9fb4bd] focus:ring-2 focus:ring-[#9fb4bd]/50 outline-none"
+        >
+          <option value="">-- Select Option for Table 2 --</option>
+          <option value="cutting">Cutting</option>
+          <option value="spreading">Spreading</option>
+          <option value="checking">Checking</option>
+        </select>
+        <h2 class="text-lg md:text-xl font-bold mb-4">TABLE 2</h2>
+        <div class="flex gap-4 w-4/5">
+          <!-- Table -->
+          <table
+            class="w-full max-w-md border border-black bg-white text-center"
+          >
+            <thead>
+              <tr class="bg-gray-100 font-bold">
+                <th class="border border-black p-3 text-sm">EMP NO</th>
+                <th class="border border-black p-3 text-sm">EMP NAME</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-black p-3">201</td>
+                <td class="border border-black p-3">Hawkeye</td>
+              </tr>
+              <tr>
+                <td class="border border-black p-3">202</td>
+                <td class="border border-black p-3">Scarlet Witch</td>
+              </tr>
+              <tr>
+                <td class="border border-black p-3">203</td>
+                <td class="border border-black p-3">Vision</td>
+              </tr>
+              <tr>
+                <td class="border border-black p-3">204</td>
+                <td class="border border-black p-3">Falcon</td>
+              </tr>
+              <tr>
+                <td class="border border-black p-3">205</td>
+                <td class="border border-black p-3">Ant-Man</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- QR Column -->
+          <div class="flex flex-col justify-around">
+            <br />
+            <br />
+            <img
+              src="./assets/qrcode.png"
+              class="w-9 h-9 mx-auto my-2 cursor-pointer transition-transform hover:scale-110"
+            />
+            <img
+              src="./assets/qrcode.png"
+              class="w-9 h-9 mx-auto my-2 cursor-pointer transition-transform hover:scale-110"
+            />
+            <img
+              src="./assets/qrcode.png"
+              class="w-9 h-9 mx-auto my-2 cursor-pointer transition-transform hover:scale-110"
+            />
+            <img
+              src="./assets/qrcode.png"
+              class="w-9 h-9 mx-auto my-2 cursor-pointer transition-transform hover:scale-110"
+            />
+            <img
+              src="./assets/qrcode.png"
+              class="w-9 h-9 mx-auto my-2 cursor-pointer transition-transform hover:scale-110"
+            />
+          </div>
+        </div>
+        <!-- <button
+          class="mt-5 px-12 py-3 bg-[#9fb4bd] text-white text-lg font-bold rounded-md transition hover:bg-black hover:scale-105"
+        >
+          Next
+        </button> -->
+        <a
+          href="spreading_production_1.html"
+          class="mt-5 inline-block px-12 py-3 bg-[#9fb4bd] text-white text-lg font-bold rounded-md transition hover:bg-black hover:scale-105"
+        >
+          Next
+        </a>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div
+      id="scanModal"
+      class="hidden fixed inset-0 z-50 bg-black/60 flex justify-center items-center px-4"
+    >
+      <div
+        class="bg-white rounded-lg p-6 w-full max-w-md md:max-w-lg lg:max-w-xl text-center relative"
+      >
+        <!-- Close Button -->
+        <span
+          id="closeModal"
+          class="absolute top-2 right-3 text-2xl font-bold text-gray-700 cursor-pointer"
+          >&times;</span
+        >
+
+        <h3 class="mb-4 text-lg md:text-xl font-bold">Scan QR Code</h3>
+
+        <!-- Scanner Preview -->
+        <div
+          class="w-full h-[250px] border-2 border-dashed border-black flex items-center justify-center text-sm md:text-base text-gray-600 bg-gray-100"
+        >
+          📷 Camera will open here for scanning...
+        </div>
+
+        <!-- Input + Button side by side -->
+        <div class="flex flex-wrap gap-2 mt-4">
+          <input
+            type="text"
+            id="scanInput"
+            placeholder="Enter or Scan QR code"
+            class="flex-1 min-w-[150px] px-4 py-2 border-2 border-[#9fb4bd] rounded-lg focus:border-black focus:ring-2 focus:ring-black/30 outline-none"
+          />
+          <button
+            class="px-6 py-2 bg-[#9fb4bd] text-white font-bold rounded-lg transition hover:bg-black hover:scale-105"
+          >
+            Scan
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Auto date
+      const today = new Date();
+      const day = String(today.getDate()).padStart(2, "0");
+      const month = String(today.getMonth() + 1).padStart(2, "0");
+      const year = today.getFullYear();
+      document.getElementById(
+        "date"
+      ).innerText = `DATE: ${day}/${month}/${year}`;
+
+      // Modal logic
+      const modal = document.getElementById("scanModal");
+      const closeModal = document.getElementById("closeModal");
+      const scanImgs = document.querySelectorAll(".cursor-pointer");
+
+      scanImgs.forEach((img) => {
+        img.addEventListener("click", () => {
+          modal.classList.remove("hidden");
+        });
+      });
+
+      closeModal.addEventListener("click", () => {
+        modal.classList.add("hidden");
+      });
+
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.classList.add("hidden");
+        }
+      });
+    </script>
+  </body>
+</html>
