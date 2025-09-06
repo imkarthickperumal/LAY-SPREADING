@@ -14,6 +14,10 @@
       body {
         font-family: "Orbitron", sans-serif;
       }
+      tr.dragging {
+        opacity: 0.5;
+        background: #fef3c7;
+      }
     </style>
   </head>
   <body
@@ -37,6 +41,7 @@
     <!-- Button Group -->
     <div class="flex justify-center gap-3 mb-6 flex-wrap">
       <button
+        id="allocateBtn"
         class="px-4 py-2 rounded-md font-bold bg-[#9fb4bd] text-white hover:bg-[#6f8996] transition"
       >
         Table Allocate
@@ -47,6 +52,7 @@
         Overwrite
       </button>
       <button
+        id="lockBtn"
         class="px-4 py-2 rounded-md font-bold bg-gray-200 text-black hover:bg-gray-400 transition"
       >
         🔒
@@ -54,7 +60,7 @@
     </div>
 
     <!-- CUT SAMPLE SECTION -->
-    <section class="my-8 w-[80%] mx-auto">
+    <section class="my-8 w-[90%] mx-auto">
       <div class="flex flex-col md:flex-row items-start">
         <!-- Section Title -->
         <div
@@ -70,7 +76,9 @@
 
         <!-- Table -->
         <div class="flex-1 overflow-x-auto ml-0 md:ml-2 mt-3 md:mt-0">
-          <table class="w-full border border-black text-xs md:text-sm">
+          <table
+            class="w-full border border-black text-xs md:text-sm cutTable min-w-[700px]"
+          >
             <thead>
               <tr class="bg-gray-100">
                 <th class="border border-black px-3 py-2">PLAN NO</th>
@@ -80,6 +88,7 @@
                 <th class="border border-black px-3 py-2">TOTAL PLY</th>
                 <th class="border border-black px-3 py-2">WEIGHT</th>
                 <th class="border border-black px-3 py-2">LAY LENGTH</th>
+                <th class="border border-black px-3 py-2">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -95,6 +104,15 @@
                 <td class="border border-black px-3 py-2 text-center">87</td>
                 <td class="border border-black px-3 py-2 text-center">147</td>
                 <td class="border border-black px-3 py-2 text-center">7.47</td>
+                <td
+                  class="border border-black px-3 py-2 text-center action-cell"
+                >
+                  <button
+                    class="readyBtn bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm"
+                  >
+                    Ready To Spread
+                  </button>
+                </td>
               </tr>
               <tr>
                 <td class="border border-black px-3 py-2 text-center">3262</td>
@@ -106,65 +124,86 @@
                 <td class="border border-black px-3 py-2 text-center">70</td>
                 <td class="border border-black px-3 py-2 text-center">132</td>
                 <td class="border border-black px-3 py-2 text-center">7.47</td>
+                <td
+                  class="border border-black px-3 py-2 text-center action-cell"
+                >
+                  <button
+                    class="readyBtn bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm"
+                  >
+                    Ready To Spread
+                  </button>
+                </td>
               </tr>
               <tr>
-                <td class="border border-black px-3 py-2 text-center">3263</td>
+                <td class="border border-black px-3 py-2 text-center">3265</td>
                 <td class="border border-black px-3 py-2 text-center">
-                  J6957A
+                  J6959A
                 </td>
-                <td class="border border-black px-3 py-2 text-center">
-                  Grey Melange
+                <td class="border border-black px-3 py-2 text-center">Green</td>
+                <td class="border border-black px-3 py-2 text-center">2</td>
+                <td class="border border-black px-3 py-2 text-center">65</td>
+                <td class="border border-black px-3 py-2 text-center">128</td>
+                <td class="border border-black px-3 py-2 text-center">6.80</td>
+                <td
+                  class="border border-black px-3 py-2 text-center action-cell"
+                >
+                  <button
+                    class="readyBtn bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm"
+                  >
+                    Ready To Spread
+                  </button>
                 </td>
-                <td class="border border-black px-3 py-2 text-center">1</td>
-                <td class="border border-black px-3 py-2 text-center">85</td>
-                <td class="border border-black px-3 py-2 text-center">150</td>
-                <td class="border border-black px-3 py-2 text-center">7.47</td>
               </tr>
               <tr>
-                <td class="border border-black px-3 py-2 text-center">3264</td>
+                <td class="border border-black px-3 py-2 text-center">3266</td>
                 <td class="border border-black px-3 py-2 text-center">
-                  J6958A
+                  J6960A
                 </td>
-                <td class="border border-black px-3 py-2 text-center">White</td>
-                <td class="border border-black px-3 py-2 text-center">1</td>
-                <td class="border border-black px-3 py-2 text-center">68</td>
-                <td class="border border-black px-3 py-2 text-center">130</td>
-                <td class="border border-black px-3 py-2 text-center">7.47</td>
+                <td class="border border-black px-3 py-2 text-center">
+                  Navy Blue
+                </td>
+                <td class="border border-black px-3 py-2 text-center">2</td>
+                <td class="border border-black px-3 py-2 text-center">75</td>
+                <td class="border border-black px-3 py-2 text-center">140</td>
+                <td class="border border-black px-3 py-2 text-center">7.20</td>
+                <td
+                  class="border border-black px-3 py-2 text-center action-cell"
+                >
+                  <button
+                    class="readyBtn bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm"
+                  >
+                    Ready To Spread
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-black px-3 py-2 text-center">3267</td>
+                <td class="border border-black px-3 py-2 text-center">
+                  J6961A
+                </td>
+                <td class="border border-black px-3 py-2 text-center">Black</td>
+                <td class="border border-black px-3 py-2 text-center">3</td>
+                <td class="border border-black px-3 py-2 text-center">90</td>
+                <td class="border border-black px-3 py-2 text-center">160</td>
+                <td class="border border-black px-3 py-2 text-center">8.00</td>
+                <td
+                  class="border border-black px-3 py-2 text-center action-cell"
+                >
+                  <button
+                    class="readyBtn bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm"
+                  >
+                    Ready To Spread
+                  </button>
+                </td>
               </tr>
             </tbody>
           </table>
-        </div>
-
-        <!-- Actions -->
-        <div class="flex flex-row md:flex-col gap-2 ml-0 md:ml-3 mt-3 md:mt-0">
-          <br />
-
-          <button
-            class="bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm hover:bg-black transition"
-          >
-            Ready To Spread
-          </button>
-          <button
-            class="bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm hover:bg-black transition"
-          >
-            Ready To Spread
-          </button>
-          <button
-            class="bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm hover:bg-black transition"
-          >
-            Ready To Spread
-          </button>
-          <button
-            class="bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm hover:bg-black transition"
-          >
-            Ready To Spread
-          </button>
         </div>
       </div>
     </section>
 
     <!-- ORDER SECTION -->
-    <section class="my-8 w-[80%] mx-auto">
+    <section class="my-8 w-[90%] mx-auto">
       <div class="flex flex-col md:flex-row items-start">
         <!-- Section Title -->
         <div
@@ -180,7 +219,9 @@
 
         <!-- Table -->
         <div class="flex-1 overflow-x-auto ml-0 md:ml-2 mt-3 md:mt-0">
-          <table class="w-full border border-black text-xs md:text-sm">
+          <table
+            class="w-full border border-black text-xs md:text-sm orderTable min-w-[700px]"
+          >
             <thead>
               <tr class="bg-gray-100">
                 <th class="border border-black px-3 py-2">PLAN NO</th>
@@ -190,33 +231,10 @@
                 <th class="border border-black px-3 py-2">TOTAL PLY</th>
                 <th class="border border-black px-3 py-2">WEIGHT</th>
                 <th class="border border-black px-3 py-2">LAY LENGTH</th>
+                <th class="border border-black px-3 py-2">Action</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td class="border border-black px-3 py-2 text-center">3261</td>
-                <td class="border border-black px-3 py-2 text-center">
-                  J6955A
-                </td>
-                <td class="border border-black px-3 py-2 text-center">
-                  Sky Blue
-                </td>
-                <td class="border border-black px-3 py-2 text-center">1</td>
-                <td class="border border-black px-3 py-2 text-center">87</td>
-                <td class="border border-black px-3 py-2 text-center">147</td>
-                <td class="border border-black px-3 py-2 text-center">7.47</td>
-              </tr>
-              <tr>
-                <td class="border border-black px-3 py-2 text-center">3262</td>
-                <td class="border border-black px-3 py-2 text-center">
-                  J6956A
-                </td>
-                <td class="border border-black px-3 py-2 text-center">Red</td>
-                <td class="border border-black px-3 py-2 text-center">1</td>
-                <td class="border border-black px-3 py-2 text-center">70</td>
-                <td class="border border-black px-3 py-2 text-center">132</td>
-                <td class="border border-black px-3 py-2 text-center">7.47</td>
-              </tr>
               <tr>
                 <td class="border border-black px-3 py-2 text-center">3263</td>
                 <td class="border border-black px-3 py-2 text-center">
@@ -229,6 +247,15 @@
                 <td class="border border-black px-3 py-2 text-center">85</td>
                 <td class="border border-black px-3 py-2 text-center">150</td>
                 <td class="border border-black px-3 py-2 text-center">7.47</td>
+                <td
+                  class="border border-black px-3 py-2 text-center action-cell"
+                >
+                  <button
+                    class="readyBtn bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm"
+                  >
+                    Ready To Spread
+                  </button>
+                </td>
               </tr>
               <tr>
                 <td class="border border-black px-3 py-2 text-center">3264</td>
@@ -240,35 +267,84 @@
                 <td class="border border-black px-3 py-2 text-center">68</td>
                 <td class="border border-black px-3 py-2 text-center">130</td>
                 <td class="border border-black px-3 py-2 text-center">7.47</td>
+                <td
+                  class="border border-black px-3 py-2 text-center action-cell"
+                >
+                  <button
+                    class="readyBtn bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm"
+                  >
+                    Ready To Spread
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-black px-3 py-2 text-center">3268</td>
+                <td class="border border-black px-3 py-2 text-center">
+                  J6962A
+                </td>
+                <td class="border border-black px-3 py-2 text-center">
+                  Orange
+                </td>
+                <td class="border border-black px-3 py-2 text-center">2</td>
+                <td class="border border-black px-3 py-2 text-center">72</td>
+                <td class="border border-black px-3 py-2 text-center">135</td>
+                <td class="border border-black px-3 py-2 text-center">7.10</td>
+                <td
+                  class="border border-black px-3 py-2 text-center action-cell"
+                >
+                  <button
+                    class="readyBtn bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm"
+                  >
+                    Ready To Spread
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-black px-3 py-2 text-center">3269</td>
+                <td class="border border-black px-3 py-2 text-center">
+                  J6963A
+                </td>
+                <td class="border border-black px-3 py-2 text-center">
+                  Yellow
+                </td>
+                <td class="border border-black px-3 py-2 text-center">2</td>
+                <td class="border border-black px-3 py-2 text-center">66</td>
+                <td class="border border-black px-3 py-2 text-center">125</td>
+                <td class="border border-black px-3 py-2 text-center">6.90</td>
+                <td
+                  class="border border-black px-3 py-2 text-center action-cell"
+                >
+                  <button
+                    class="readyBtn bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm"
+                  >
+                    Ready To Spread
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-black px-3 py-2 text-center">3270</td>
+                <td class="border border-black px-3 py-2 text-center">
+                  J6964A
+                </td>
+                <td class="border border-black px-3 py-2 text-center">
+                  Purple
+                </td>
+                <td class="border border-black px-3 py-2 text-center">3</td>
+                <td class="border border-black px-3 py-2 text-center">95</td>
+                <td class="border border-black px-3 py-2 text-center">170</td>
+                <td class="border border-black px-3 py-2 text-center">8.20</td>
+                <td
+                  class="border border-black px-3 py-2 text-center action-cell"
+                >
+                  <button
+                    class="readyBtn bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm"
+                  >
+                    Ready To Spread
+                  </button>
+                </td>
               </tr>
             </tbody>
           </table>
-        </div>
-
-        <!-- Actions -->
-        <div class="flex flex-row md:flex-col gap-2 ml-0 md:ml-3 mt-3 md:mt-0">
-          <br />
-
-          <button
-            class="bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm hover:bg-black transition"
-          >
-            Ready To Spread
-          </button>
-          <button
-            class="bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm hover:bg-black transition"
-          >
-            Ready To Spread
-          </button>
-          <button
-            class="bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm hover:bg-black transition"
-          >
-            Ready To Spread
-          </button>
-          <button
-            class="bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm hover:bg-black transition"
-          >
-            Ready To Spread
-          </button>
         </div>
       </div>
     </section>
@@ -282,6 +358,83 @@
       document.getElementById(
         "date"
       ).innerText = `DATE: ${day}/${month}/${year}`;
+
+      const allocateBtn = document.getElementById("allocateBtn");
+      const lockBtn = document.getElementById("lockBtn");
+
+      let dragEnabled = false; // control flag
+
+      // Step 1: Allocate - replace buttons with checkboxes & enable drag
+      allocateBtn.addEventListener("click", () => {
+        document.querySelectorAll(".action-cell").forEach((cell) => {
+          cell.innerHTML = `<input type="checkbox" class="rowCheck w-5 h-5" />`;
+        });
+
+        // make rows draggable
+        document.querySelectorAll("tbody tr").forEach((row) => {
+          row.setAttribute("draggable", "true");
+        });
+
+        dragEnabled = true;
+      });
+
+      // Step 2: Drag and Drop rows (only if dragEnabled)
+      document.querySelectorAll("tbody").forEach((tbody) => {
+        tbody.addEventListener("dragstart", (e) => {
+          if (!dragEnabled) return;
+          if (e.target.tagName === "TR") {
+            e.target.classList.add("dragging");
+          }
+        });
+        tbody.addEventListener("dragend", (e) => {
+          if (!dragEnabled) return;
+          e.target.classList.remove("dragging");
+        });
+        tbody.addEventListener("dragover", (e) => {
+          if (!dragEnabled) return;
+          e.preventDefault();
+          const dragging = document.querySelector(".dragging");
+          const afterRow = getDragAfterElement(tbody, e.clientY);
+          if (afterRow == null) {
+            tbody.appendChild(dragging);
+          } else {
+            tbody.insertBefore(dragging, afterRow);
+          }
+        });
+      });
+
+      function getDragAfterElement(container, y) {
+        const rows = [...container.querySelectorAll("tr:not(.dragging)")];
+        return rows.reduce(
+          (closest, child) => {
+            const box = child.getBoundingClientRect();
+            const offset = y - box.top - box.height / 2;
+            if (offset < 0 && offset > closest.offset) {
+              return { offset: offset, element: child };
+            } else {
+              return closest;
+            }
+          },
+          { offset: Number.NEGATIVE_INFINITY }
+        ).element;
+      }
+
+      // Step 3: Lock - disable drag, hide checkboxes, set Ready/Pending
+      lockBtn.addEventListener("click", () => {
+        dragEnabled = false;
+
+        document.querySelectorAll("tbody").forEach((tbody) => {
+          const rows = tbody.querySelectorAll("tr");
+          rows.forEach((row, i) => {
+            const cell = row.querySelector(".action-cell");
+            if (i === 0) {
+              cell.innerHTML = `<button class="w-32 px-3 py-2 rounded-md font-bold text-xs md:text-sm text-white" style="background-color:#8AA7B2;">Ready To Spread</button>`;
+            } else {
+              cell.innerHTML = `<button disabled class="w-32 px-3 py-2 rounded-md font-bold text-xs md:text-sm text-white" style="background-color:#F89D9D;">Pending</button>`;
+            }
+          });
+        });
+      });
     </script>
   </body>
 </html>
