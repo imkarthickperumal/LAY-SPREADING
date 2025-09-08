@@ -25,46 +25,46 @@
   >
     <!-- Header -->
     <header
-      class="text-center text-2xl md:text-4xl font-extrabold tracking-widest border-b-2 border-black py-5"
+      class="text-center text-lg sm:text-2xl md:text-4xl font-extrabold tracking-widest border-b-2 border-black py-4 sm:py-5"
     >
       LAY SPREADING
     </header>
 
     <!-- Date Section -->
     <section
-      class="flex flex-col sm:flex-row justify-between px-5 py-2 text-sm md:text-base font-semibold gap-2"
+      class="flex flex-col sm:flex-row justify-between px-4 sm:px-6 py-2 text-xs sm:text-sm md:text-base font-semibold gap-2"
     >
       <div id="date"></div>
       <div>TABLE ALLOCATE</div>
     </section>
 
     <!-- Button Group -->
-    <div class="flex justify-center gap-3 mb-6 flex-wrap">
+    <div class="flex justify-center gap-2 sm:gap-3 mb-6 flex-wrap px-2">
       <button
         id="allocateBtn"
-        class="px-4 py-2 rounded-md font-bold bg-[#9fb4bd] text-white hover:bg-[#6f8996] transition"
+        class="px-3 sm:px-4 py-2 rounded-md font-bold bg-[#9fb4bd] text-white hover:bg-[#6f8996] transition text-xs sm:text-sm md:text-base"
       >
         Table Allocate
       </button>
       <button
-        class="px-4 py-2 rounded-md font-bold bg-[#f48b8b] text-white hover:bg-[#e35c5c] transition"
+        class="px-3 sm:px-4 py-2 rounded-md font-bold bg-[#f48b8b] text-white hover:bg-[#e35c5c] transition text-xs sm:text-sm md:text-base"
       >
         Overwrite
       </button>
       <button
         id="lockBtn"
-        class="px-4 py-2 rounded-md font-bold bg-gray-200 text-black hover:bg-gray-400 transition"
+        class="px-3 sm:px-4 py-2 rounded-md font-bold bg-gray-200 text-black hover:bg-gray-400 transition text-xs sm:text-sm md:text-base"
       >
         🔒
       </button>
     </div>
 
     <!-- CUT SAMPLE SECTION -->
-    <section class="my-8 w-[90%] mx-auto">
+    <section class="my-8 w-[95%] sm:w-[90%] mx-auto">
       <div class="flex flex-col md:flex-row items-start">
         <!-- Section Title -->
         <div
-          class="text-sm font-bold px-2 py-8 text-center"
+          class="text-xs sm:text-sm font-bold px-2 py-6 sm:py-8 text-center"
           style="
             writing-mode: vertical-rl;
             transform: rotate(180deg);
@@ -77,120 +77,180 @@
         <!-- Table -->
         <div class="flex-1 overflow-x-auto ml-0 md:ml-2 mt-3 md:mt-0">
           <table
-            class="w-full border border-black text-xs md:text-sm cutTable min-w-[700px]"
+            class="w-full border border-black text-[10px] sm:text-xs md:text-sm cutTable min-w-[600px] sm:min-w-[700px]"
           >
             <thead>
               <tr class="bg-gray-100">
-                <th class="border border-black px-3 py-2">PLAN NO</th>
-                <th class="border border-black px-3 py-2">JOB NO</th>
-                <th class="border border-black px-3 py-2">COLOR</th>
-                <th class="border border-black px-3 py-2">LOT NO</th>
-                <th class="border border-black px-3 py-2">TOTAL PLY</th>
-                <th class="border border-black px-3 py-2">WEIGHT</th>
-                <th class="border border-black px-3 py-2">LAY LENGTH</th>
-                <th class="border border-black px-3 py-2">Action</th>
+                <th class="border border-black px-2 sm:px-3 py-2">PLAN NO</th>
+                <th class="border border-black px-2 sm:px-3 py-2">JOB NO</th>
+                <th class="border border-black px-2 sm:px-3 py-2">COLOR</th>
+                <th class="border border-black px-2 sm:px-3 py-2">LOT NO</th>
+                <th class="border border-black px-2 sm:px-3 py-2">TOTAL PLY</th>
+                <th class="border border-black px-2 sm:px-3 py-2">WEIGHT</th>
+                <th class="border border-black px-2 sm:px-3 py-2">
+                  LAY LENGTH
+                </th>
+                <th class="border border-black px-2 sm:px-3 py-2">Action</th>
               </tr>
             </thead>
             <tbody>
+              <!-- Dummy 5 Rows -->
               <tr>
-                <td class="border border-black px-3 py-2 text-center">3261</td>
-                <td class="border border-black px-3 py-2 text-center">
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  3261
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
                   J6955A
                 </td>
-                <td class="border border-black px-3 py-2 text-center">
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
                   Sky Blue
                 </td>
-                <td class="border border-black px-3 py-2 text-center">1</td>
-                <td class="border border-black px-3 py-2 text-center">87</td>
-                <td class="border border-black px-3 py-2 text-center">147</td>
-                <td class="border border-black px-3 py-2 text-center">7.47</td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  1
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  87
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  147
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  7.47
+                </td>
                 <td
-                  class="border border-black px-3 py-2 text-center action-cell"
+                  class="border border-black px-2 sm:px-3 py-2 text-center action-cell"
                 >
                   <button
-                    class="readyBtn bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm"
+                    class="readyBtn bg-[#9fb4bd] text-white w-25 sm:w-25 px-3 py-2 rounded-md font-bold text-[10px] sm:text-xs md:text-sm"
                   >
                     Ready To Spread
                   </button>
                 </td>
               </tr>
               <tr>
-                <td class="border border-black px-3 py-2 text-center">3262</td>
-                <td class="border border-black px-3 py-2 text-center">
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  3262
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
                   J6956A
                 </td>
-                <td class="border border-black px-3 py-2 text-center">Red</td>
-                <td class="border border-black px-3 py-2 text-center">1</td>
-                <td class="border border-black px-3 py-2 text-center">70</td>
-                <td class="border border-black px-3 py-2 text-center">132</td>
-                <td class="border border-black px-3 py-2 text-center">7.47</td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  Red
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  1
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  70
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  132
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  7.47
+                </td>
                 <td
-                  class="border border-black px-3 py-2 text-center action-cell"
+                  class="border border-black px-2 sm:px-3 py-2 text-center action-cell"
                 >
                   <button
-                    class="readyBtn bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm"
+                    class="readyBtn bg-[#9fb4bd] text-white w-25 sm:w-25 px-3 py-2 rounded-md font-bold text-[10px] sm:text-xs md:text-sm"
                   >
                     Ready To Spread
                   </button>
                 </td>
               </tr>
+              <!-- Add 3 more dummy rows same style -->
               <tr>
-                <td class="border border-black px-3 py-2 text-center">3265</td>
-                <td class="border border-black px-3 py-2 text-center">
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  3265
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
                   J6959A
                 </td>
-                <td class="border border-black px-3 py-2 text-center">Green</td>
-                <td class="border border-black px-3 py-2 text-center">2</td>
-                <td class="border border-black px-3 py-2 text-center">65</td>
-                <td class="border border-black px-3 py-2 text-center">128</td>
-                <td class="border border-black px-3 py-2 text-center">6.80</td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  Green
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  2
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  65
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  128
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  6.80
+                </td>
                 <td
-                  class="border border-black px-3 py-2 text-center action-cell"
+                  class="border border-black px-2 sm:px-3 py-2 text-center action-cell"
                 >
                   <button
-                    class="readyBtn bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm"
+                    class="readyBtn bg-[#9fb4bd] text-white w-25 sm:w-25 px-3 py-2 rounded-md font-bold text-[10px] sm:text-xs md:text-sm"
                   >
                     Ready To Spread
                   </button>
                 </td>
               </tr>
               <tr>
-                <td class="border border-black px-3 py-2 text-center">3266</td>
-                <td class="border border-black px-3 py-2 text-center">
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  3266
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
                   J6960A
                 </td>
-                <td class="border border-black px-3 py-2 text-center">
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
                   Navy Blue
                 </td>
-                <td class="border border-black px-3 py-2 text-center">2</td>
-                <td class="border border-black px-3 py-2 text-center">75</td>
-                <td class="border border-black px-3 py-2 text-center">140</td>
-                <td class="border border-black px-3 py-2 text-center">7.20</td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  2
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  75
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  140
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  7.20
+                </td>
                 <td
-                  class="border border-black px-3 py-2 text-center action-cell"
+                  class="border border-black px-2 sm:px-3 py-2 text-center action-cell"
                 >
                   <button
-                    class="readyBtn bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm"
+                    class="readyBtn bg-[#9fb4bd] text-white w-25 sm:w-25 px-3 py-2 rounded-md font-bold text-[10px] sm:text-xs md:text-sm"
                   >
                     Ready To Spread
                   </button>
                 </td>
               </tr>
               <tr>
-                <td class="border border-black px-3 py-2 text-center">3267</td>
-                <td class="border border-black px-3 py-2 text-center">
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  3267
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
                   J6961A
                 </td>
-                <td class="border border-black px-3 py-2 text-center">Black</td>
-                <td class="border border-black px-3 py-2 text-center">3</td>
-                <td class="border border-black px-3 py-2 text-center">90</td>
-                <td class="border border-black px-3 py-2 text-center">160</td>
-                <td class="border border-black px-3 py-2 text-center">8.00</td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  Black
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  3
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  90
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  160
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  8.00
+                </td>
                 <td
-                  class="border border-black px-3 py-2 text-center action-cell"
+                  class="border border-black px-2 sm:px-3 py-2 text-center action-cell"
                 >
                   <button
-                    class="readyBtn bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm"
+                    class="readyBtn bg-[#9fb4bd] text-white w-25 sm:w-25 px-3 py-2 rounded-md font-bold text-[10px] sm:text-xs md:text-sm"
                   >
                     Ready To Spread
                   </button>
@@ -202,12 +262,11 @@
       </div>
     </section>
 
-    <!-- ORDER SECTION -->
-    <section class="my-8 w-[90%] mx-auto">
+    <!-- ORDER SECTION (same as above dummy rows) -->
+    <section class="my-8 w-[95%] sm:w-[90%] mx-auto">
       <div class="flex flex-col md:flex-row items-start">
-        <!-- Section Title -->
         <div
-          class="text-sm font-bold px-2 py-10 text-center"
+          class="text-xs sm:text-sm font-bold px-2 py-6 sm:py-10 text-center"
           style="
             writing-mode: vertical-rl;
             transform: rotate(180deg);
@@ -216,128 +275,181 @@
         >
           ORDER
         </div>
-
-        <!-- Table -->
         <div class="flex-1 overflow-x-auto ml-0 md:ml-2 mt-3 md:mt-0">
           <table
-            class="w-full border border-black text-xs md:text-sm orderTable min-w-[700px]"
+            class="w-full border border-black text-[10px] sm:text-xs md:text-sm orderTable min-w-[600px] sm:min-w-[700px]"
           >
             <thead>
               <tr class="bg-gray-100">
-                <th class="border border-black px-3 py-2">PLAN NO</th>
-                <th class="border border-black px-3 py-2">JOB NO</th>
-                <th class="border border-black px-3 py-2">COLOR</th>
-                <th class="border border-black px-3 py-2">LOT NO</th>
-                <th class="border border-black px-3 py-2">TOTAL PLY</th>
-                <th class="border border-black px-3 py-2">WEIGHT</th>
-                <th class="border border-black px-3 py-2">LAY LENGTH</th>
-                <th class="border border-black px-3 py-2">Action</th>
+                <th class="border border-black px-2 sm:px-3 py-2">PLAN NO</th>
+                <th class="border border-black px-2 sm:px-3 py-2">JOB NO</th>
+                <th class="border border-black px-2 sm:px-3 py-2">COLOR</th>
+                <th class="border border-black px-2 sm:px-3 py-2">LOT NO</th>
+                <th class="border border-black px-2 sm:px-3 py-2">TOTAL PLY</th>
+                <th class="border border-black px-2 sm:px-3 py-2">WEIGHT</th>
+                <th class="border border-black px-2 sm:px-3 py-2">
+                  LAY LENGTH
+                </th>
+                <th class="border border-black px-2 sm:px-3 py-2">Action</th>
               </tr>
             </thead>
             <tbody>
+              <!-- Dummy 5 Rows same as cut sample -->
               <tr>
-                <td class="border border-black px-3 py-2 text-center">3263</td>
-                <td class="border border-black px-3 py-2 text-center">
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  3263
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
                   J6957A
                 </td>
-                <td class="border border-black px-3 py-2 text-center">
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
                   Grey Melange
                 </td>
-                <td class="border border-black px-3 py-2 text-center">1</td>
-                <td class="border border-black px-3 py-2 text-center">85</td>
-                <td class="border border-black px-3 py-2 text-center">150</td>
-                <td class="border border-black px-3 py-2 text-center">7.47</td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  1
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  85
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  150
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  7.47
+                </td>
                 <td
-                  class="border border-black px-3 py-2 text-center action-cell"
+                  class="border border-black px-2 sm:px-3 py-2 text-center action-cell"
                 >
                   <button
-                    class="readyBtn bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm"
+                    class="readyBtn bg-[#9fb4bd] text-white w-25 sm:w-25 px-3 py-2 rounded-md font-bold text-[10px] sm:text-xs md:text-sm"
                   >
                     Ready To Spread
                   </button>
                 </td>
               </tr>
               <tr>
-                <td class="border border-black px-3 py-2 text-center">3264</td>
-                <td class="border border-black px-3 py-2 text-center">
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  3264
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
                   J6958A
                 </td>
-                <td class="border border-black px-3 py-2 text-center">White</td>
-                <td class="border border-black px-3 py-2 text-center">1</td>
-                <td class="border border-black px-3 py-2 text-center">68</td>
-                <td class="border border-black px-3 py-2 text-center">130</td>
-                <td class="border border-black px-3 py-2 text-center">7.47</td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  White
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  1
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  68
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  130
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  7.47
+                </td>
                 <td
-                  class="border border-black px-3 py-2 text-center action-cell"
+                  class="border border-black px-2 sm:px-3 py-2 text-center action-cell"
                 >
                   <button
-                    class="readyBtn bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm"
+                    class="readyBtn bg-[#9fb4bd] text-white w-25 sm:w-25 px-3 py-2 rounded-md font-bold text-[10px] sm:text-xs md:text-sm"
                   >
                     Ready To Spread
                   </button>
                 </td>
               </tr>
               <tr>
-                <td class="border border-black px-3 py-2 text-center">3268</td>
-                <td class="border border-black px-3 py-2 text-center">
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  3268
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
                   J6962A
                 </td>
-                <td class="border border-black px-3 py-2 text-center">
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
                   Orange
                 </td>
-                <td class="border border-black px-3 py-2 text-center">2</td>
-                <td class="border border-black px-3 py-2 text-center">72</td>
-                <td class="border border-black px-3 py-2 text-center">135</td>
-                <td class="border border-black px-3 py-2 text-center">7.10</td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  2
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  72
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  135
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  7.10
+                </td>
                 <td
-                  class="border border-black px-3 py-2 text-center action-cell"
+                  class="border border-black px-2 sm:px-3 py-2 text-center action-cell"
                 >
                   <button
-                    class="readyBtn bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm"
+                    class="readyBtn bg-[#9fb4bd] text-white w-25 sm:w-25 px-3 py-2 rounded-md font-bold text-[10px] sm:text-xs md:text-sm"
                   >
                     Ready To Spread
                   </button>
                 </td>
               </tr>
               <tr>
-                <td class="border border-black px-3 py-2 text-center">3269</td>
-                <td class="border border-black px-3 py-2 text-center">
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  3269
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
                   J6963A
                 </td>
-                <td class="border border-black px-3 py-2 text-center">
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
                   Yellow
                 </td>
-                <td class="border border-black px-3 py-2 text-center">2</td>
-                <td class="border border-black px-3 py-2 text-center">66</td>
-                <td class="border border-black px-3 py-2 text-center">125</td>
-                <td class="border border-black px-3 py-2 text-center">6.90</td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  2
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  66
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  125
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  6.90
+                </td>
                 <td
-                  class="border border-black px-3 py-2 text-center action-cell"
+                  class="border border-black px-2 sm:px-3 py-2 text-center action-cell"
                 >
                   <button
-                    class="readyBtn bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm"
+                    class="readyBtn bg-[#9fb4bd] text-white w-25 sm:w-25 px-3 py-2 rounded-md font-bold text-[10px] sm:text-xs md:text-sm"
                   >
                     Ready To Spread
                   </button>
                 </td>
               </tr>
               <tr>
-                <td class="border border-black px-3 py-2 text-center">3270</td>
-                <td class="border border-black px-3 py-2 text-center">
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  3270
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
                   J6964A
                 </td>
-                <td class="border border-black px-3 py-2 text-center">
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
                   Purple
                 </td>
-                <td class="border border-black px-3 py-2 text-center">3</td>
-                <td class="border border-black px-3 py-2 text-center">95</td>
-                <td class="border border-black px-3 py-2 text-center">170</td>
-                <td class="border border-black px-3 py-2 text-center">8.20</td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  3
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  95
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  170
+                </td>
+                <td class="border border-black px-2 sm:px-3 py-2 text-center">
+                  8.20
+                </td>
                 <td
-                  class="border border-black px-3 py-2 text-center action-cell"
+                  class="border border-black px-2 sm:px-3 py-2 text-center action-cell"
                 >
                   <button
-                    class="readyBtn bg-[#9fb4bd] text-white px-3 py-2 rounded-md font-bold text-xs md:text-sm"
+                    class="readyBtn bg-[#9fb4bd] text-white w-25 sm:w-25 px-3 py-2 rounded-md font-bold text-[10px] sm:text-xs md:text-sm"
                   >
                     Ready To Spread
                   </button>
@@ -362,23 +474,18 @@
       const allocateBtn = document.getElementById("allocateBtn");
       const lockBtn = document.getElementById("lockBtn");
 
-      let dragEnabled = false; // control flag
+      let dragEnabled = false;
 
-      // Step 1: Allocate - replace buttons with checkboxes & enable drag
       allocateBtn.addEventListener("click", () => {
         document.querySelectorAll(".action-cell").forEach((cell) => {
           cell.innerHTML = `<input type="checkbox" class="rowCheck w-5 h-5" />`;
         });
-
-        // make rows draggable
         document.querySelectorAll("tbody tr").forEach((row) => {
           row.setAttribute("draggable", "true");
         });
-
         dragEnabled = true;
       });
 
-      // Step 2: Drag and Drop rows (only if dragEnabled)
       document.querySelectorAll("tbody").forEach((tbody) => {
         tbody.addEventListener("dragstart", (e) => {
           if (!dragEnabled) return;
@@ -419,19 +526,40 @@
         ).element;
       }
 
-      // Step 3: Lock - disable drag, hide checkboxes, set Ready/Pending
+      // Lock -> replace checkboxes with buttons
       lockBtn.addEventListener("click", () => {
         dragEnabled = false;
-
         document.querySelectorAll("tbody").forEach((tbody) => {
           const rows = tbody.querySelectorAll("tr");
           rows.forEach((row, i) => {
             const cell = row.querySelector(".action-cell");
             if (i === 0) {
-              cell.innerHTML = `<button class="w-32 px-3 py-2 rounded-md font-bold text-xs md:text-sm text-white" style="background-color:#8AA7B2;">Ready To Spread</button>`;
+              cell.innerHTML = `<button class="readyBtn w-24 sm:w-32 px-3 py-2 rounded-md font-bold text-xs sm:text-sm text-white bg-[#8AA7B2]">Ready To Spread</button>`;
             } else {
-              cell.innerHTML = `<button disabled class="w-32 px-3 py-2 rounded-md font-bold text-xs md:text-sm text-white" style="background-color:#F89D9D;">Pending</button>`;
+              cell.innerHTML = `<button disabled class="w-24 sm:w-32 px-3 py-2 rounded-md font-bold text-xs sm:text-sm text-white bg-[#F89D9D]">Pending</button>`;
             }
+          });
+        });
+
+        // Attach Ready button listener
+        document.querySelectorAll(".readyBtn").forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            const row = e.target.closest("tr");
+            const cells = row.querySelectorAll("td");
+
+            // Build query string from row values
+            const params = new URLSearchParams({
+              planNo: cells[0].innerText,
+              jobNo: cells[1].innerText,
+              color: cells[2].innerText,
+              lotNo: cells[3].innerText,
+              totalPly: cells[4].innerText,
+              weight: cells[5].innerText,
+              layLength: cells[6].innerText,
+            });
+
+            // Redirect to new page with values
+            window.location.href = `spreading_production_3.html?${params.toString()}`;
           });
         });
       });
