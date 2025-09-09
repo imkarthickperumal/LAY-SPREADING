@@ -180,6 +180,68 @@
       class="flex justify-end items-center mt-6 border-t border-gray-400 pt-4"
     ></div>
 
+    <div class="p-2 w-full h-screen flex flex-col">
+      <!-- Table wrapper -->
+      <div class="w-full flex flex-row mb-5">
+        <!-- Column 1: Table (takes ~90% width) -->
+        <div class="w-11/12 overflow-x-auto">
+          <table
+            class="min-w-full border-collapse border border-gray-300 text-sm text-center"
+          >
+            <thead class="bg-gray-100">
+              <tr>
+                <th class="border border-gray-300 px-2 py-1">S.NO</th>
+                <th class="border border-gray-300 px-2 py-1">Roll No</th>
+                <th class="border border-gray-300 px-2 py-1">F.DIA</th>
+                <th class="border border-gray-300 px-2 py-1">PLAN PLY</th>
+                <th class="border border-gray-300 px-2 py-1">PLAN OBWGT</th>
+                <th class="border border-gray-300 px-2 py-1">REQD WGT</th>
+                <th class="border border-gray-300 px-2 py-1">ACTUAL DIA</th>
+                <th class="border border-gray-300 px-2 py-1">ACTUAL PLY</th>
+                <th class="border border-gray-300 px-2 py-1">ACTUAL OBWGT</th>
+                <th class="border border-gray-300 px-2 py-1">END BIT</th>
+                <th class="border border-gray-300 px-2 py-1">BAL WGT</th>
+                <th class="border border-gray-300 px-2 py-1">
+                  DEB.KG / REMARKS
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-gray-300 px-2 py-1">1</td>
+                <td class="border border-gray-300 px-2 py-1">V13184</td>
+                <td class="border border-gray-300 px-2 py-1">59.50</td>
+                <td class="border border-gray-300 px-2 py-1">11</td>
+                <td class="border border-gray-300 px-2 py-1">1.71</td>
+                <td class="border border-gray-300 px-2 py-1">18.76</td>
+                <td class="border border-gray-300 px-2 py-1">18.76</td>
+                <td class="border border-gray-300 px-2 py-1"></td>
+                <td class="border border-gray-300 px-2 py-1"></td>
+                <td class="border border-gray-300 px-2 py-1"></td>
+                <td class="border border-gray-300 px-2 py-1"></td>
+                <td class="border border-gray-300 px-2 py-1"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Column 2: Timer (takes ~10% width) -->
+        <div class="w-1/12 flex items-center justify-center">
+          <p id="row-timer" class="text-black-500 font-bold text-lg">00:00</p>
+        </div>
+      </div>
+
+      <!-- Save button bottom-right -->
+      <div class="flex justify-end mt-5">
+        <button
+          id="saveBtn"
+          class="px-6 py-2 font-bold rounded-lg text-white transition bg-[#8AA7B2] hover:bg-[#78919A]"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+
     <!-- Roll Status Modal -->
     <div
       id="rollModal"
@@ -189,7 +251,7 @@
         <h2 class="text-lg font-bold mb-4 text-center">Roll Status</h2>
         <table id="rollTable" class="w-full text-left border border-gray-300">
           <thead>
-            <tr class="bg-gray-200">
+            <tr class="">
               <th class="px-2 py-1 border">ROLL NO</th>
               <th class="px-2 py-1 border">PLAN PLY</th>
               <th class="px-2 py-1 border">SCAN</th>
@@ -242,87 +304,97 @@
       </div>
     </div>
 
-    <!-- <script>
-      const brownCheck = document.getElementById("brownCheck");
-      const markerCheck = document.getElementById("markerCheck");
-      const brownTimer = document.getElementById("brownTimer");
-      const markerTimer = document.getElementById("markerTimer");
-      const liveClock = document.getElementById("liveClock");
+    <!-- Scan Modal -->
+    <div
+      id="scanModal"
+      class="hidden fixed inset-0 z-50 bg-black/60 flex justify-center items-center px-4"
+    >
+      <div
+        class="bg-white rounded-lg p-6 w-full max-w-md md:max-w-lg lg:max-w-xl text-center relative"
+      >
+        <!-- Close Button -->
+        <span
+          id="closeScanModal"
+          class="absolute top-2 right-3 text-2xl font-bold text-gray-700 cursor-pointer"
+          >&times;</span
+        >
 
-      const rollModal = document.getElementById("rollModal");
-      const rollStatusBtn = document.getElementById("rollStatusBtn");
-      const closeModal = document.getElementById("closeModal");
+        <h3 class="mb-4 text-lg md:text-xl font-bold">Scan QR Code</h3>
 
-      let timerStart = null;
-      let timerInterval = null;
-      let joinMarkerElapsed = 0;
+        <!-- Scanner Preview -->
+        <div
+          class="w-full h-[250px] border-2 border-dashed border-black flex items-center justify-center text-sm md:text-base text-gray-600 bg-gray-100"
+        >
+          📷 Camera will open here for scanning...
+        </div>
 
-      function formatTime(ms) {
-        const totalSeconds = Math.floor(ms / 1000);
-        const minutes = String(Math.floor(totalSeconds / 60)).padStart(2, "0");
-        const seconds = String(totalSeconds % 60).padStart(2, "0");
-        return `${minutes}:${seconds}`;
-      }
+        <!-- Input + Button side by side -->
+        <div class="flex flex-wrap gap-2 mt-4">
+          <input
+            type="text"
+            id="scanInput"
+            placeholder="Enter or Scan QR code"
+            class="flex-1 min-w-[150px] px-4 py-2 border-2 border-[#9fb4bd] rounded-lg focus:border-black focus:ring-2 focus:ring-black/30 outline-none"
+          />
+          <button
+            class="px-6 py-2 bg-[#9fb4bd] text-white font-bold rounded-lg transition hover:bg-black hover:scale-105"
+          >
+            Scan
+          </button>
+        </div>
+      </div>
+    </div>
 
-      function startTimer() {
-        timerStart = Date.now();
-        liveClock.textContent = "00:00";
-        timerInterval = setInterval(() => {
-          liveClock.textContent = formatTime(Date.now() - timerStart);
-        }, 1000);
-      }
+    <!-- Success Modal -->
+    <div
+      id="successModal"
+      class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40 hidden z-50"
+    >
+      <div
+        class="bg-white rounded-lg shadow-lg text-center p-6 w-80 relative border border-green-400"
+      >
+        <!-- Success Icon -->
+        <div class="flex justify-center -mt-12">
+          <div
+            class="bg-green-500 w-20 h-20 rounded-full flex items-center justify-center shadow-md"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-10 w-10 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="3"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+          </div>
+        </div>
 
-      function stopTimer() {
-        clearInterval(timerInterval);
-        const elapsed = Date.now() - timerStart;
-        liveClock.textContent = "00:00";
-        return elapsed;
-      }
+        <!-- Modal Content -->
+        <h2 id="successMessage" class="mt-6 text-lg font-bold text-gray-800">
+          Data Saved Successfully 👍
+        </h2>
+        <p id="orderStatus" class="text-gray-600 font-semibold mt-2">
+          J6955A Completed
+        </p>
+        <p id="totalTime" class="text-gray-500 text-sm mt-1">
+          Total Time - 00:00
+        </p>
 
-      // Brown Sheet checkbox
-      brownCheck.addEventListener("change", () => {
-        if (brownCheck.checked) {
-          startTimer();
-          if (markerCheck.checked) {
-            markerCheck.checked = false;
-            markerTimer.textContent = "00:00";
-          }
-        } else {
-          clearInterval(timerInterval);
-          liveClock.textContent = "00:00";
-        }
-      });
-
-      // Join Marker checkbox
-      markerCheck.addEventListener("change", () => {
-        if (markerCheck.checked) {
-          if (!brownCheck.checked) brownCheck.checked = true;
-          const elapsed = stopTimer();
-          brownTimer.textContent = formatTime(elapsed);
-          startTimer();
-        } else {
-          joinMarkerElapsed = stopTimer();
-          markerTimer.textContent = formatTime(joinMarkerElapsed);
-        }
-      });
-
-      // Roll Status button opens modal
-      rollStatusBtn.addEventListener("click", () => {
-        rollModal.classList.remove("hidden");
-      });
-
-      // Close modal
-      closeModal.addEventListener("click", () => {
-        rollModal.classList.add("hidden");
-      });
-
-      // Optional: close modal if clicked outside
-      rollModal.addEventListener("click", (e) => {
-        if (e.target === rollModal) {
-          rollModal.classList.add("hidden");
-        }
-      });
-    </script> -->
+        <!-- Close Button -->
+        <button
+          id="closeSuccessModal"
+          class="mt-6 px-4 py-2 rounded-lg bg-green-500 text-white font-semibold hover:bg-green-600 transition"
+        >
+          Close
+        </button>
+      </div>
+    </div>
 
     <script>
       const brownCheck = document.getElementById("brownCheck");
@@ -415,6 +487,58 @@
       rollModal.addEventListener("click", (e) => {
         if (e.target === rollModal) {
           rollModal.classList.add("hidden");
+        }
+      });
+
+      // Scan Modal
+      const scanModal = document.getElementById("scanModal");
+      const closeScanModal = document.getElementById("closeScanModal");
+
+      // Open Scan Modal ONLY when clicking QR images
+      document.querySelectorAll("#rollTable td img").forEach((img) => {
+        img.addEventListener("click", (e) => {
+          e.stopPropagation(); // prevent row click issues
+          scanModal.classList.remove("hidden");
+        });
+      });
+
+      // Close Scan Modal
+      closeScanModal.addEventListener("click", () => {
+        scanModal.classList.add("hidden");
+      });
+
+      // Close on outside click
+      scanModal.addEventListener("click", (e) => {
+        if (e.target === scanModal) {
+          scanModal.classList.add("hidden");
+        }
+      });
+      // -------------------------
+      // ✅ Success Modal (Data Saved Successfully)
+      const saveBtn = document.getElementById("saveBtn");
+      const successModal = document.getElementById("successModal");
+      const closeSuccessModal = document.getElementById("closeSuccessModal");
+
+      const successMessage = document.getElementById("successMessage");
+      const orderStatus = document.getElementById("orderStatus");
+      const totalTime = document.getElementById("totalTime");
+
+      saveBtn.addEventListener("click", () => {
+        // set dynamic values
+        successMessage.textContent = "Data Saved Successfully 👍";
+        orderStatus.textContent = "J6955A Completed";
+        totalTime.textContent = "Total Time - 00:45";
+
+        successModal.classList.remove("hidden");
+      });
+
+      closeSuccessModal.addEventListener("click", () => {
+        successModal.classList.add("hidden");
+      });
+
+      successModal.addEventListener("click", (e) => {
+        if (e.target === successModal) {
+          successModal.classList.add("hidden");
         }
       });
     </script>
